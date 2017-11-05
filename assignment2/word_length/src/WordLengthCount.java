@@ -19,12 +19,6 @@ public class WordLengthCount {
     job.setMapperClass(WordLengthMapper.class);
     job.setReducerClass(IntSumReducer.class);
     
-    //Set number of reducers to 3
-    job.setNumReduceTasks(3);
-    
-    //Add combiner class 
-    job.setCombinerClass(IntSumReducer.class);
-    
     job.setMapOutputKeyClass(IntWritable.class);
     job.setMapOutputValueClass(IntWritable.class);
     Path outputPath = new Path(output);
