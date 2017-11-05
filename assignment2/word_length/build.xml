@@ -1,4 +1,4 @@
-<project name="WordLengthCount" default="dist" basedir=".">
+<project name="Lab1-WordCount" default="dist" basedir=".">
 	<description>
         Sample MapReduce project build file
     </description>
@@ -7,7 +7,6 @@
 	<property name="build" location="classes" />
 	<property name="dist" location="dist" />
 
-	<!--<property name="hadoop.version" value="2.0.0-mr1-cdh4.1.2" /> -->
 	<property name="hadoop.base.path" value="/usr/lib/hadoop/client/" />
 
 
@@ -38,7 +37,7 @@
 		<mkdir dir="${dist}" />
 
 		<!-- Put everything in ${build} into a jar file -->
-		<jar jarfile="${dist}/WordLengthCount.jar" basedir="${build}" />
+		<jar jarfile="${dist}/WordCount.jar" basedir="${build}" />
 	</target>
 
 	<target name="clean" description="clean up">
