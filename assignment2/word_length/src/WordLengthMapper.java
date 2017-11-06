@@ -14,7 +14,7 @@ public class WordLengthMapper extends
 			throws IOException, InterruptedException {
 		// Use output of part 2
 		// Split by tab spacing
-		String[] line = value.toString().split("\r");
+		String[] line = value.toString().split(";");
 		length.set(line[0].length());
 		context.write(length, one);
 
