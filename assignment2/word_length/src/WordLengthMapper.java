@@ -1,8 +1,9 @@
 import java.io.IOException;
-import java.util.StringTokenizer;
+
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
+
 public class WordLengthMapper extends
 		Mapper<Object, Text, IntWritable, IntWritable> {
 
@@ -13,7 +14,7 @@ public class WordLengthMapper extends
 			throws IOException, InterruptedException {
 		// Use output of part 2
 		// Split by tab spacing
-		String[] line = value.toString().split("\t");
+		String[] line = value.toString().split("\r");
 		length.set(line[0].length());
 		context.write(length, one);
 
