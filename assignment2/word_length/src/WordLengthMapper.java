@@ -15,7 +15,7 @@ public class WordLengthMapper extends
 		// Use output of part 2
 		// Split by tab spacing
 		String[] line = value.toString().split(";");
-		length.set(line[0].length());
+		length.set(line[2].length());
 		context.write(length, one);
 
 	}
