@@ -15,9 +15,9 @@ public class WordLengthMapper extends
 			
 		if(value.toString().split(";").length == 4) {
 		
-		String[] line = value.toString().split(";");
-			if(length.set(line[2].length())){
-			context.write(length, one);
+			String[] line = value.toString().split(";");
+				if(length.set(line[2].length()) < 146){
+				context.write(length, one);
 
 	}
 }
