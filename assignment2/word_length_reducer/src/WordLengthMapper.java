@@ -9,6 +9,7 @@ public class WordLengthMapper extends
 
 	private final IntWritable one = new IntWritable(1);
 	private final IntWritable length = new IntWritable(1);
+	private final int number = new int(1)
 
 	public void map(Object key, Text value, Context context)
 			throws IOException, InterruptedException {
@@ -16,9 +17,9 @@ public class WordLengthMapper extends
 		if(value.toString().split(";").length == 4) {
 		
 			String[] line = value.toString().split(";");	
-			length.set(line[2].length()); 
-			
-				if (length < 146){	
+			length.set(line[2].length());	 
+			number.set(line[2].length());
+				if (number < 146){	
 					context.write(length, one);
 					
 
