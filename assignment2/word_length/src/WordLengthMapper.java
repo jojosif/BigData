@@ -12,10 +12,9 @@ public class WordLengthMapper extends
 
 	public void map(Object key, Text value, Context context)
 			throws IOException, InterruptedException {
-		// Use output of part 2
-		// Split by tab spacing
-		String[] line = value.toString().split(";");
-		length.set(line[2].length());
+		
+		String[] line = value.toString().split(";",2);
+		length.set(line[].length());
 		context.write(length, one);
 
 	}
