@@ -12,10 +12,13 @@ public class WordLengthMapper extends
 
 	public void map(Object key, Text value, Context context)
 			throws IOException, InterruptedException {
+			
+		if(value.toString().split(";").length == 4) {
 		
 		String[] line = value.toString().split(";");
 		length.set(line[2].length());
 		context.write(length, one);
 
 	}
+}
 }
