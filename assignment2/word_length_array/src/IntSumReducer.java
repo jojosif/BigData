@@ -19,7 +19,7 @@ public class IntSumReducer extends Reducer<IntWritable, IntWritable, IntWritable
         
         //context.write(key, result);
         
-        data = new int[length % 5]{1}
+        data = new int[sum % 5]{1}
 
         context.write(data)
     }
