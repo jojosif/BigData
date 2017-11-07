@@ -18,7 +18,7 @@ public class WordLengthMapper extends
 		
 			String[] line = value.toString().split(";");	
 			length.set(line[2].length());	 
-			double number = length ;
+			double number = line[2].length() ;
 				if (number < 146){	
 					context.write(length, one);
 					
