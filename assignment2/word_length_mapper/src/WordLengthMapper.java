@@ -9,7 +9,7 @@ public class WordLengthMapper extends
 
 	private final IntWritable one = new IntWritable(1);
 	private final IntWritable length = new IntWritable(1);
-    private final IntWritable tir = new IntWritable(1)
+    private final IntWritable tir = new IntWritable(1);
 
 	public void map(Object key, Text value, Context context)
 			throws IOException, InterruptedException {
