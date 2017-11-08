@@ -5,11 +5,11 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 public class WordLengthMapper extends
-		Mapper<Object, Text, IntWritable, IntWritable> {
+		Mapper<Object, Text, DoubleWritable, IntWritable> {
 
 	private final IntWritable one = new IntWritable(1);
 	private final IntWritable length = new IntWritable(1);
-    private final IntWritable tir = new IntWritable(1);
+    private final IntWritable tir = new DoubleWritable(1);
 
 	public void map(Object key, Text value, Context context)
 			throws IOException, InterruptedException {
