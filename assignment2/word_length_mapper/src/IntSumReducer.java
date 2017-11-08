@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 public class IntSumReducer extends Reducer<IntWritable, IntWritable, IntWritable, IntWritable> {
     
 	private IntWritable result = new IntWritable();
-   	int[] data;
+   
     public void reduce(IntWritable key, Iterable<IntWritable> values, Context context)
               throws IOException, InterruptedException {
  
@@ -17,10 +17,6 @@ public class IntSumReducer extends Reducer<IntWritable, IntWritable, IntWritable
         }
                result.set(sum);
         
-        //context.write(key, result);
-        
-        data = new int[sum % 5]{1}
-
-        context.write(data)
+        context.write(key, result);
     }
 }

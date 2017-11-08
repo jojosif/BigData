@@ -19,8 +19,9 @@ public class WordLengthMapper extends
 			String[] line = value.toString().split(";");	
 			length.set(line[2].length());	 
 			double number = line[2].length() ;
-				if (number < 140){	
-					context.write(length, one);
+				if (number < 140){
+					double mod = number % 5;
+					context.write(number, one);
 					
 
 	}
