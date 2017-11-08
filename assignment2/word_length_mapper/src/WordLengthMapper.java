@@ -9,7 +9,7 @@ public class WordLengthMapper extends
 
 	private final IntWritable one = new IntWritable(1);
 	private final IntWritable length = new IntWritable(1);
-    private final IntWritable size = new IntWritable(1);
+    private final IntWritable tir = new IntWritable(1)
 
 	public void map(Object key, Text value, Context context)
 			throws IOException, InterruptedException {
@@ -21,7 +21,8 @@ public class WordLengthMapper extends
 			double number = line[2].length() ;
 				if (number < 140){
 				    double size = (number % 5);
-					context.write(size, one);
+				    tir.set(size);
+					context.write(tir, one);
 					
 
 	}
