@@ -21,7 +21,7 @@ public class WordLengthMapper extends
 			double number = line[2].length() ;
 				if (number < 140){
 					mod.set = number % 5;
-					context.write(number, one);
+					context.write(mod, one);
 					
 
 	}
