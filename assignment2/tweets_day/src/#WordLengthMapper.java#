@@ -1,0 +1,35 @@
+import java.io.IOException;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+import com.amazonaws.thirdparty.joda.time.DateTime;
+
+public class WordLengthMapper extends
+        Mapper<Object, Text, IntWritable, IntWritable> {
+
+    private final IntWritable one = new IntWritable(1);
+    private final IntWritable length = new IntWritable(1);
+ 
+
+    public void map(Object key, Text value, Context context)
+            throws IOException, InterruptedException {
+
+        if(value.toString().split(";").length == 4) {
+
+            String[] line = value.toString().split(";");
+            DateTime val = new DateTime(line[0].getTime());
+            int hours = val.getHourOfDay();
+            length.set(hours);
+            context.write(length, one);
+
+
+            }
+        }
+    }
+
