@@ -33,17 +33,17 @@ public class HashtagCount {
 		public void map(Object key, Text value, Context context)
                 throws IOException, InterruptedException {
 	
-			//new
+			
 			try {
 			if(value.toString().split(";").length == 4) {
-			//new
+			
 			String[] line = value.toString().split(";");
-			//new
+			
 			long x = Long.parseLong(line[0]);
         	int hour = LocalDateTime.ofEpochSecond(x/1000, 0, ZoneOffset.of("-02:00:00")).getHour();
         	length.set(hour);	
-        	if (hour == 11) {
-			//new
+        	if (hour == 23) {
+			
 			Matcher matcher = TAG_PATTERN.matcher(line[2]);
             while (matcher.find()) {
             	String found = matcher.group();
