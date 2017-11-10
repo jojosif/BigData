@@ -19,7 +19,7 @@ public class WordLengthMapper extends
             String[] line = value.toString().split(";");
             length.set(line[2].length());
             double number = line[2].length() ;
-            tir.set((int) (number / 5));
+            tir.set((int) Math.ceil(number / 5));
             if (number < 141){
                 context.write(tir, one);
 
